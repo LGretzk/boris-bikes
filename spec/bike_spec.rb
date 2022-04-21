@@ -1,12 +1,7 @@
 require './lib/bike'
+
 describe Bike do
-    describe "working?" do
-        context "if working?" do
-        it "returns true" do
-        instance = Bike.new
-        expect(instance.working?).to eq(true)
-        end
-        end
+    it 'responds to working?' do
+        expect(subject).to respond_to :working?
     end
 end
-
