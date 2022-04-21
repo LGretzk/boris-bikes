@@ -17,12 +17,12 @@ describe DockingStation do
 
         it 'docks the bike passed on as argument' do
             bike = Bike.new
-            expect(subject.dock_bike(bike)).to eq bike
+            expect(subject.dock_bike(bike)).to eq [bike]
         end
 
-        it 'returns an array with a bike' do
-
+        it 'return the bike added to the docking station' do
+            bike = Bike.new
+            subject.dock_bike(bike)
+            expect(subject.bikes).to eq [bike]
         end
-
-
     end
