@@ -1,3 +1,10 @@
+class EmptyDockingStation < StandardError
+end
+
+class DockingStationFull < StandardError
+end
+
+
 class DockingStation 
     attr_reader :bikes
 
@@ -6,7 +13,7 @@ class DockingStation
     end
 
     def release_bike
-        Bike.new
+        @bikes.empty? ? (raise EmptyDockingStation) : Bike.new
     end
 
     def dock_bike(bike)
